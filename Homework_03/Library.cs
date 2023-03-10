@@ -9,7 +9,8 @@ public static class Library
     {
         for(int i = 0; i < collection.Length; i++)
         {
-            collection[i] = new Random().NextDouble();
+            double random = new Random().NextDouble()*9;
+            collection[i] = Math.Round(random, 2);
         }
     }
     public static string PrintArray(double[] massiv)
@@ -20,5 +21,35 @@ public static class Library
             elMassiv = elMassiv + massiv[i] + " ";
         }
         return elMassiv;
+    }
+    public static double EachMin(double[] massiv2)
+    {
+        double minArray = massiv2[0];
+        for(int i =1; i < massiv2.Length; i++)
+        {
+            if(massiv2[i] < minArray)
+            {
+                minArray = massiv2[i];
+            }
+        }
+        return minArray;
+    }
+    public static double EachMax(double[] massiv3)
+    {
+        double maxArray = massiv3[0];
+        for(int i =1; i < massiv3.Length; i++)
+        {
+            if(massiv3[i] > maxArray)
+            {
+                maxArray = massiv3[i];
+            }
+        }
+        return maxArray;
+    }
+    public static double GetResult(double maximum, double minimum)
+    {
+        double result = maximum - minimum;
+        double result1 = Math.Round(result, 2);
+        return result1;
     }
 }
