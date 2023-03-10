@@ -26,7 +26,7 @@ public static class Library
         int count = 0;
         for(int i = 0; i < massiv1.Length; i++)
         {
-            if (i%2 == 0)
+            if (i%2 != 0)
             {
                 count = count + massiv1[i];
             }
